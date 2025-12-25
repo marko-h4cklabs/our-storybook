@@ -1,10 +1,10 @@
 import { Heart, Calendar } from "lucide-react";
 
 const timelineEvents = [
-  { date: "Date here", title: "First Met", description: "Your description..." },
-  { date: "Date here", title: "First Date", description: "Your description..." },
-  { date: "Date here", title: "Made It Official", description: "Your description..." },
-  { date: "Date here", title: "Special Milestone", description: "Your description..." },
+  { date: "6th of March 2016", title: "First Met", description: "First met at friends house..." },
+  { date: "5th of December 2024", title: "Started Dating", description: "Started dating in Zagreb..." },
+  { date: "5th of December 2025", title: "Engagement", description: "Engaged one year later..." },
+  { date: "to be continued...", title: "Wedding", description: "Yet to come..." },
 ];
 
 const TimelineSection = () => {
