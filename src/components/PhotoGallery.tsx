@@ -15,13 +15,13 @@ import gallery13 from "@/assets/gallery-13.png";
 import gallery14 from "@/assets/gallery-14.png";
 
 const photos = [
-  { src: gallery1, span: "md:col-span-2 md:row-span-2" },
+  { src: gallery11, span: "md:col-span-2 md:row-span-2" },
   { src: gallery2, span: "" },
   { src: gallery3, span: "" },
   { src: gallery4, span: "" },
   { src: gallery5, span: "md:col-span-2" },
   { src: gallery6, span: "" },
-  { src: gallery11, span: "" },
+  { src: gallery1, span: "" },
   { src: gallery7, span: "" },
   { src: gallery12, span: "md:col-span-2" },
   { src: gallery8, span: "" },
