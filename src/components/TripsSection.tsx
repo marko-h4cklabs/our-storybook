@@ -1,9 +1,12 @@
-import { Heart, MapPin, Image as ImageIcon } from "lucide-react";
+import { Heart, MapPin } from "lucide-react";
+import tripPoland from "@/assets/trip-poland.png";
+import tripAlbania from "@/assets/trip-albania.png";
+import tripPrimosten from "@/assets/trip-primosten.png";
 
 const trips = [
-  { location: "Poljska", date: "31st of December 2024" },
-  { location: "Albanija", date: "23th of September 2025" },
-  { location: "Primošten", date: "27th of June 2025" },
+  { location: "Poljska", date: "31st of December 2024", image: tripPoland, objectPosition: "center 70%" },
+  { location: "Albanija", date: "23th of September 2025", image: tripAlbania, objectPosition: "center" },
+  { location: "Primošten", date: "27th of June 2025", image: tripPrimosten, objectPosition: "center" },
 ];
 
 const TripsSection = () => {
@@ -24,12 +27,14 @@ const TripsSection = () => {
               key={index}
               className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/30 transition-colors"
             >
-              {/* Image placeholder */}
-              <div className="aspect-[4/3] bg-muted flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <ImageIcon className="mx-auto mb-2 text-primary/50" size={32} />
-                  <p className="text-xs">Add trip photo</p>
-                </div>
+              {/* Trip image */}
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={trip.image}
+                  alt={`Trip to ${trip.location}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  style={{ objectPosition: trip.objectPosition }}
+                />
               </div>
               
               {/* Info */}
