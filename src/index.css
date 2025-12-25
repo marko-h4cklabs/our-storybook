@@ -123,13 +123,13 @@
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 @keyframes pulse-slow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.02); }
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.03); }
 }
 
 @keyframes spin-very-slow {
@@ -146,7 +146,29 @@
   0% { opacity: 0; transform: translateX(0) rotate(35deg); }
   10% { opacity: 1; }
   70% { opacity: 1; }
-  100% { opacity: 0; transform: translateX(150px) rotate(35deg); }
+  100% { opacity: 0; transform: translateX(180px) rotate(35deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+
+@keyframes comet {
+  0% { opacity: 0; transform: translateX(-20px) translateY(10px); }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateX(100px) translateY(-30px); }
 }
 
 @keyframes page-enter {
@@ -194,20 +216,38 @@
 }
 
 .animate-twinkle {
-  animation: twinkle 3s ease-in-out infinite;
+  animation: twinkle 2.5s ease-in-out infinite;
 }
 
 .animate-spin-very-slow {
-  animation: spin-very-slow 120s linear infinite;
+  animation: spin-very-slow 100s linear infinite;
 }
 
 .animate-spin-reverse-slow {
-  animation: spin-reverse-slow 90s linear infinite;
+  animation: spin-reverse-slow 80s linear infinite;
 }
 
 .animate-shooting-star {
-  animation: shooting-star 4s ease-out infinite;
-  animation-delay: 3s;
+  animation: shooting-star 5s ease-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 5s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+  transform-origin: 45px 45px;
+}
+
+.animate-comet {
+  animation: comet 10s ease-in-out infinite;
+  animation-delay: 4s;
 }
 
 .animate-page-enter {
