@@ -1,9 +1,11 @@
 import { Heart, Quote } from "lucide-react";
 
 const notes = [
-  { text: "Add your love note here...", from: "Keona" },
-  { text: "Add your love note here...", from: "Marko" },
-  { text: "Add your love note here...", from: "Keona" },
+  { text: "36 mjeseci, kolko je to? - aha godinu i pol...", from: "Keona" },
+  { text: "riŠPEKt", from: "Keona" },
+  { text: "shit will hit a pen", from: "Keona" },
+  { text: "pretrasute", from: "Keona" },
+  { text: "friends who stay pray together stay together", from: "Keona" },
 ];
 
 const LoveNotesSection = () => {
@@ -11,7 +13,7 @@ const LoveNotesSection = () => {
     <section id="notes" className="relative py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-center mb-4">
-          Love Notes
+          Special Notes
         </h2>
         <div className="flex justify-center mb-12">
           <Heart className="text-primary" size={24} fill="currentColor" strokeWidth={0} />
