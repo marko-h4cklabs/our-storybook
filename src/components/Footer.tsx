@@ -2,27 +2,20 @@ import { Heart } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-12 px-6 bg-primary text-primary-foreground">
-      <div className="max-w-4xl mx-auto text-center">
+    <footer className="py-12 px-4 border-t border-border">
+      <div className="max-w-2xl mx-auto text-center">
         <Heart 
-          className="mx-auto mb-4 text-accent animate-pulse-soft" 
-          size={32} 
-          fill="currentColor"
+          className="mx-auto mb-4 text-primary" 
+          size={20} 
+          fill="currentColor" 
+          strokeWidth={0}
         />
-        
-        <p className="font-display text-2xl md:text-3xl mb-4">
+        <p className="font-display text-lg text-muted-foreground">
+          Keona & Marko
+        </p>
+        <p className="text-sm text-muted-foreground/60 mt-2">
           Forever & Always
         </p>
-        
-        <p className="font-body text-primary-foreground/80 text-sm">
-          Made with love, for the love of my life
-        </p>
-        
-        <div className="mt-8 pt-8 border-t border-primary-foreground/20">
-          <p className="font-body text-xs text-primary-foreground/60">
-            Our love story continues... ♡
-          </p>
-        </div>
       </div>
     </footer>
   );
