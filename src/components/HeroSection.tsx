@@ -1,46 +1,59 @@
 import { Heart } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+
+const navItems = [
+  { label: "Our Story", href: "#our-story" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Timeline", href: "#timeline" },
+  { label: "Trips", href: "#trips" },
+  { label: "Notes", href: "#notes" },
+];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero" />
-      </div>
-
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-12">
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <div className="animate-fade-in-up">
+      <div className="relative z-10 text-center max-w-2xl mx-auto">
+        {/* Heart icon */}
+        <div className="opacity-0 animate-fade-in-up">
           <Heart 
-            className="mx-auto mb-6 text-accent animate-pulse-soft" 
-            size={48} 
+            className="mx-auto mb-8 text-primary animate-pulse-glow rounded-full" 
+            size={40} 
             fill="currentColor"
+            strokeWidth={0}
           />
         </div>
         
-        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-6 animate-fade-in-up animation-delay-200">
-          Our Love Story
+        {/* Main headline */}
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-4 opacity-0 animate-fade-in-up animation-delay-100 tracking-wide">
+          Keona & Marko
         </h1>
         
-        <p className="font-display text-xl md:text-2xl lg:text-3xl text-primary-foreground/90 italic mb-8 animate-fade-in-up animation-delay-400">
-          "Every love story is beautiful, but ours is my favorite"
+        <p className="font-display text-xl sm:text-2xl md:text-3xl text-primary italic mb-12 opacity-0 animate-fade-in-up animation-delay-200">
+          — love story —
         </p>
         
-        <div className="flex items-center justify-center gap-4 text-primary-foreground/80 animate-fade-in-up animation-delay-600">
-          <span className="font-display text-lg md:text-xl">You</span>
-          <Heart className="text-accent" size={20} fill="currentColor" />
-          <span className="font-display text-lg md:text-xl">Me</span>
-        </div>
+        {/* Navigation buttons */}
+        <nav className="flex flex-wrap justify-center gap-3 sm:gap-4 opacity-0 animate-fade-in-up animation-delay-300">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="px-4 py-2 sm:px-6 sm:py-2.5 text-sm sm:text-base font-body font-medium
+                         border border-border rounded-full
+                         text-foreground/80 hover:text-foreground
+                         hover:border-primary hover:bg-primary/10
+                         transition-all duration-300"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
+      {/* Scroll hint */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up animation-delay-500">
+        <div className="w-5 h-8 border border-muted-foreground/30 rounded-full flex justify-center pt-1.5">
+          <div className="w-1 h-2 bg-primary rounded-full animate-bounce" />
         </div>
       </div>
     </section>

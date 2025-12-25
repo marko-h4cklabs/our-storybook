@@ -1,80 +1,39 @@
-import { Heart, Calendar, MapPin, Star } from "lucide-react";
-
-const storyMoments = [
-  {
-    icon: Star,
-    title: "The Day We Met",
-    date: "A Special Day",
-    description: "The universe conspired to bring us together, and from that moment, everything changed. Your smile lit up my world.",
-  },
-  {
-    icon: Heart,
-    title: "Our First Date",
-    date: "A Magical Evening",
-    description: "Nervous butterflies, endless conversations, and the realization that I wanted to spend every moment with you.",
-  },
-  {
-    icon: Calendar,
-    title: "The Moment I Knew",
-    date: "Forever Starts",
-    description: "Looking into your eyes, I saw my future. Every laugh we shared, every tear we wiped, made our bond unbreakable.",
-  },
-  {
-    icon: MapPin,
-    title: "Our Adventures",
-    date: "Many Beautiful Days",
-    description: "From quiet nights at home to spontaneous adventures, every moment with you is my favorite memory.",
-  },
-];
+import { Heart } from "lucide-react";
 
 const OurStorySection = () => {
   return (
-    <section className="py-24 px-6 bg-card relative">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl text-primary mb-4">
-            Our Story
-          </h2>
-          <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
-            Every chapter of us is written with love, laughter, and endless memories
-          </p>
+    <section id="our-story" className="relative py-20 px-4">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-center mb-4">
+          Our Story
+        </h2>
+        <div className="flex justify-center mb-12">
+          <Heart className="text-primary" size={24} fill="currentColor" strokeWidth={0} />
         </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block" />
+        <div className="space-y-8">
+          {/* Story card placeholder */}
+          <div className="bg-card border border-border rounded-lg p-6 sm:p-8">
+            <h3 className="font-display text-xl sm:text-2xl text-primary mb-4">How We Met</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              [Your story about how you two met goes here. This is a placeholder for your beautiful love story...]
+            </p>
+          </div>
 
-          {storyMoments.map((moment, index) => (
-            <div
-              key={index}
-              className={`relative flex flex-col md:flex-row items-center gap-8 mb-16 last:mb-0 ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
-            >
-              {/* Content */}
-              <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                <div className="bg-background p-8 rounded-lg shadow-soft hover:shadow-romantic transition-shadow duration-300">
-                  <span className="text-accent font-body text-sm uppercase tracking-wider">
-                    {moment.date}
-                  </span>
-                  <h3 className="font-display text-2xl md:text-3xl text-foreground mt-2 mb-4">
-                    {moment.title}
-                  </h3>
-                  <p className="text-muted-foreground font-body leading-relaxed">
-                    {moment.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Icon */}
-              <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-gradient-romantic shadow-romantic">
-                <moment.icon className="text-primary-foreground" size={24} />
-              </div>
-
-              {/* Spacer for alignment */}
-              <div className="flex-1 hidden md:block" />
+          {/* Image placeholder */}
+          <div className="aspect-video bg-card border border-border rounded-lg flex items-center justify-center">
+            <div className="text-center text-muted-foreground">
+              <Heart className="mx-auto mb-2 text-primary/50" size={32} />
+              <p className="text-sm">Add your photo here</p>
             </div>
-          ))}
+          </div>
+
+          <div className="bg-card border border-border rounded-lg p-6 sm:p-8">
+            <h3 className="font-display text-xl sm:text-2xl text-primary mb-4">Our First Date</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              [Describe your first date here. What did you do? How did you feel? Add your memories...]
+            </p>
+          </div>
         </div>
       </div>
     </section>
