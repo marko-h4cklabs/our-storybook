@@ -2,8 +2,8 @@ import { Heart, MapPin, Image } from "lucide-react";
 
 const trips = [
   { location: "Poljska", date: "31st of December 2024" },
-  { location: "Albanija", date: "23th of September 2024" },
-  { location: "Primošten", date: "27th of June 2024" },
+  { location: "Albanija", date: "23th of September 2025" },
+  { location: "Primošten", date: "27th of June 2025" },
 ];
 
 const TripsSection = () => {
