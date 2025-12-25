@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import ourStorySketch from "@/assets/our-story-sketch.png";
 
 const OurStorySection = () => {
   return (
@@ -38,12 +39,13 @@ Some people don’t just cross your path. They come back—until they become hom
             </p>
           </div>
 
-          {/* Image placeholder */}
-          <div className="aspect-video bg-card border border-border rounded-lg flex items-center justify-center">
-            <div className="text-center text-muted-foreground">
-              <Heart className="mx-auto mb-2 text-primary/50" size={32} />
-              <p className="text-sm">Add your photo here</p>
-            </div>
+          {/* Our Story Image */}
+          <div className="rounded-lg overflow-hidden border border-border">
+            <img 
+              src={ourStorySketch} 
+              alt="Marko and Keona - pencil sketch" 
+              className="w-full h-auto"
+            />
           </div>
 
         </div>
