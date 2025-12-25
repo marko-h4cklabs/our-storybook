@@ -1,4 +1,4 @@
-import { Heart, MapPin, Image } from "lucide-react";
+import { Heart, MapPin, Image as ImageIcon } from "lucide-react";
 
 const trips = [
   { location: "Poljska", date: "31st of December 2024" },
@@ -27,7 +27,7 @@ const TripsSection = () => {
               {/* Image placeholder */}
               <div className="aspect-[4/3] bg-muted flex items-center justify-center">
                 <div className="text-center text-muted-foreground">
-                  <Image className="mx-auto mb-2 text-primary/50" size={32} />
+                  <ImageIcon className="mx-auto mb-2 text-primary/50" size={32} />
                   <p className="text-xs">Add trip photo</p>
                 </div>
               </div>
