@@ -1,5 +1,6 @@
 import StarsBackground from "@/components/StarsBackground";
 import BackButton from "@/components/BackButton";
+import PageTransition from "@/components/PageTransition";
 import TripsSection from "@/components/TripsSection";
 
 const TripsPage = () => {
@@ -7,9 +8,11 @@ const TripsPage = () => {
     <>
       <StarsBackground />
       <BackButton />
-      <main className="relative z-10 min-h-screen pt-20">
-        <TripsSection />
-      </main>
+      <PageTransition>
+        <main className="relative z-10 min-h-screen pt-20">
+          <TripsSection />
+        </main>
+      </PageTransition>
     </>
   );
 };

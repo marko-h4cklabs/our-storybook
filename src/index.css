@@ -132,6 +132,34 @@
   50% { opacity: 0.5; transform: scale(1.02); }
 }
 
+@keyframes spin-very-slow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spin-reverse-slow {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes shooting-star {
+  0% { opacity: 0; transform: translateX(0) rotate(35deg); }
+  10% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(150px) rotate(35deg); }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Animations */
 @keyframes fade-in-up {
   from {
@@ -169,11 +197,33 @@
   animation: twinkle 3s ease-in-out infinite;
 }
 
+.animate-spin-very-slow {
+  animation: spin-very-slow 120s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 90s linear infinite;
+}
+
+.animate-shooting-star {
+  animation: shooting-star 4s ease-out infinite;
+  animation-delay: 3s;
+}
+
+.animate-page-enter {
+  animation: page-enter 0.5s ease-out forwards;
+}
+
 .animation-delay-100 { animation-delay: 0.1s; }
 .animation-delay-200 { animation-delay: 0.2s; }
 .animation-delay-300 { animation-delay: 0.3s; }
 .animation-delay-400 { animation-delay: 0.4s; }
 .animation-delay-500 { animation-delay: 0.5s; }
+
+/* Gradient radial utility */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar {
