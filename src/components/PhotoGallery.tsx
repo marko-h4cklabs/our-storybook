@@ -1,4 +1,6 @@
-import { Heart } from "lucide-react";
+import { useState } from "react";
+import { Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import gallery1 from "@/assets/gallery-1.png";
 import gallery2 from "@/assets/gallery-2.png";
 import gallery3 from "@/assets/gallery-3.png";
@@ -32,6 +34,23 @@ const photos = [
 ];
 
 const PhotoGallery = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => setSelectedIndex(index);
+  const closeLightbox = () => setSelectedIndex(null);
+
+  const goToPrevious = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex(selectedIndex === 0 ? photos.length - 1 : selectedIndex - 1);
+    }
+  };
+
+  const goToNext = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex(selectedIndex === photos.length - 1 ? 0 : selectedIndex + 1);
+    }
+  };
+
   return (
     <section id="gallery" className="relative py-20 px-4">
       <div className="max-w-5xl mx-auto">
@@ -52,6 +71,7 @@ const PhotoGallery = () => {
                 hover:border-primary/50 transition-all cursor-pointer group
                 ${photo.span}
               `}
+              onClick={() => openLightbox(index)}
             >
               <img
                 src={photo.src}
@@ -62,6 +82,42 @@ const PhotoGallery = () => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Dialog */}
+      <Dialog open={selectedIndex !== null} onOpenChange={closeLightbox}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-background/95 backdrop-blur-sm border-border">
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-background/80 hover:bg-background transition-colors"
+          >
+            <X className="w-6 h-6 text-foreground" />
+          </button>
+
+          <button
+            onClick={goToPrevious}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full bg-background/80 hover:bg-background transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6 text-foreground" />
+          </button>
+
+          <button
+            onClick={goToNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full bg-background/80 hover:bg-background transition-colors"
+          >
+            <ChevronRight className="w-6 h-6 text-foreground" />
+          </button>
+
+          {selectedIndex !== null && (
+            <div className="flex items-center justify-center w-full h-[90vh] p-8">
+              <img
+                src={photos[selectedIndex].src}
+                alt={`Gallery photo ${selectedIndex + 1}`}
+                className="max-w-full max-h-full object-contain rounded-lg"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
